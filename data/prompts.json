@@ -1,0 +1,18 @@
+
+[
+  {
+    "step_name": "tech_field",
+    "prompt_template": "根据以下技术交底书，用一句话总结该发明所属的技术领域。\n\n---\n技术交底书：\n{disclosure}\n---\n\n技术领域：",
+    "dependencies": ["disclosure"]
+  },
+  {
+    "step_name": "background_pain_points",
+    "prompt_template": "根据以下技术交底书，总结出现有技术存在哪些具体的问题和痛点。\n\n---\n技术交底书：\n{disclosure}\n---\n\n现有技术的痛点：",
+    "dependencies": ["disclosure"]
+  },
+  {
+    "step_name": "invention_content",
+    "prompt_template": "根据以下技术交底书和已总结的技术领域，详细描述本发明的核心技术方案和主要内容。请不要重复背景技术部分。\n\n---\n技术交底书：\n{disclosure}\n\n技术领域：\n{tech_field}\n---\n\n本发明的内容：",
+    "dependencies": ["disclosure", "tech_field"]
+  }
+]
